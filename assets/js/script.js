@@ -1,15 +1,34 @@
 $(document).ready(function(){
-    // Khi nhấp vào liên kết navbar hoặc sidebar
-    $('.navbar ul li a, .list-group a').click(function(e){
-        e.preventDefault(); // Ngăn không cho load lại trang
-        var page = $(this).attr('href'); // Lấy đường dẫn từ href
-        // Sử dụng Ajax để tải nội dung mới
+    // Handle form submission for adding a new laptop
+    $('#addLaptopForm').submit(function(e){
+        e.preventDefault(); // Prevent the page from reloading
+        var formData = $(this).serialize(); // Serialize form data
+
         $.ajax({
-            url: page,
+            type: 'POST',
+            url: 'assets/database/add_laptop.php', // URL of the script to handle form submission
+            data: formData,
             success: function(response) {
-                // Hiển thị nội dung nhận được vào phần content
-                $('.content').html(response);
+                // Handle the response from the server
+                if(response.success) {
+                    // Reload the list of laptops
+                    loadLaptops();
+                    // Close the modal
+                    $('#addLaptopModal').modal('hide');
+                } else {
+                    alert('Error: ' + response.message);
+                }
             }
         });
     });
+
+    // Function to load laptops
+    function loadLaptops() {
+        $.ajax({
+            url: 'pages/laptops.php',
+            success: function(response) {
+                $('.content').html(response);
+            }
+        });
+    }
 });

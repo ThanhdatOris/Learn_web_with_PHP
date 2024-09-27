@@ -4,7 +4,7 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addLaptopModal">
             Add New Laptop
         </button>
-        <div class="row mt-4">
+        <div class="row mt-4" id="laptop-list">
             <?php
             $laptops = fetchAll('laptops');
             foreach ($laptops as $laptop) {
