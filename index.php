@@ -14,6 +14,8 @@ include 'assets/database/ajax.php';
     <title>Shopii</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -22,19 +24,17 @@ include 'assets/database/ajax.php';
     <?php include 'pages/header.php'; ?>
     
     <div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3">
-            <?php include 'pages/sidebar.php'; ?>
+        <div class="row">
+            <div class="col-md-3">
+                <?php include 'pages/sidebar.php'; ?>
+            </div>
+            <div class="col-md-9 content">
+                <?php include 'pages/home.php'; ?>
+            </div>
         </div>
-        <div class="col-md-9 content">
-            <?php include 'pages/home.php'; ?>
-        </div>
-    </div>
     </div>
 
     <?php include 'pages/footer.php'; ?>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
