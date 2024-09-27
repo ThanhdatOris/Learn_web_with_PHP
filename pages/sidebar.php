@@ -1,8 +1,6 @@
-<aside class="sidebar">
-    <ul>
-        <li><a href="pages/Category/category1.php">Category 1</a></li>
-        <li><a href="pages/Category/category2.php">Category 2</a></li>
-        <li><a href="pages/Category/category3.php">Category 3</a></li>
-        <li><a href="pages/Category/category4.php">Category 4</a></li>
-    </ul>
-</aside>
+<div class="list-group">
+    <a href="pages/home.php" class="list-group-item list-group-item-action active">Dashboard</a>
+    <a href="pages/laptops.php" class="list-group-item list-group-item-action">Laptops</a>
+    <a href="pages/orders.php" class="list-group-item list-group-item-action">Orders</a>
+    <a href="pages/customers.php" class="list-group-item list-group-item-action">Customers</a>
+</div>

@@ -1,3 +1,10 @@
+<?php
+// Kết nối đến cơ sở dữ liệu
+include 'assets/database/db.php';
+include 'assets/database/functions.php';
+include 'assets/database/ajax.php';
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -10,16 +17,24 @@
 </head>
 
 <body>
-    <?php include 'pages/header.php'; ?>
-    
     <?php include 'pages/navbar.php'; ?>
     
-    <div class="container">
-        <?php include 'pages/sidebar.php'; ?>
-        
-        <?php include 'pages/content.php'; ?>
+    <?php include 'pages/header.php'; ?>
+    
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <?php include 'pages/sidebar.php'; ?>
+        </div>
+        <div class="col-md-9 content">
+            <?php include 'pages/home.php'; ?>
+        </div>
+    </div>
     </div>
 
     <?php include 'pages/footer.php'; ?>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

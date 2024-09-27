@@ -1,26 +1,23 @@
-<div class="row">
-    <div class="col-md-12">
-        <h2>Laptops</h2>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addLaptopModal">
-            Add New Laptop
-        </button>
-        <div class="row mt-4">
-            <?php
-            $laptops = fetchAll('laptops');
-            foreach ($laptops as $laptop) {
-                echo '<div class="col-md-4">';
-                echo '<div class="card mb-4">';
-                echo '<div class="card-body">';
-                echo '<h5 class="card-title">' . $laptop['brand'] . ' ' . $laptop['model'] . '</h5>';
-                echo '<p class="card-text">Price: $' . $laptop['price'] . '</p>';
-                echo '<p class="card-text">Stock: ' . $laptop['stock_quantity'] . '</p>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-            }
-            ?>
-        </div>
-    </div>
+<h2>Laptops</h2>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addLaptopModal">
+    Add New Laptop
+</button>
+<div class="row mt-4">
+    <?php
+    include '../assets/database/functions.php';
+    $laptops = fetchAll('laptops');
+    foreach ($laptops as $laptop) {
+        echo '<div class="col-md-4">';
+        echo '<div class="card mb-4">';
+        echo '<div class="card-body">';
+        echo '<h5 class="card-title">' . $laptop['brand'] . ' ' . $laptop['model'] . '</h5>';
+        echo '<p class="card-text">Price: $' . $laptop['price'] . '</p>';
+        echo '<p class="card-text">Stock: ' . $laptop['stock_quantity'] . '</p>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+    }
+    ?>
 </div>
 
 <!-- Add Laptop Modal -->
