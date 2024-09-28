@@ -1,5 +1,5 @@
 
-@extends('layouts.app')
+@extends('laptops.layouts.app')
 
 @section('content')
     <div class="container">

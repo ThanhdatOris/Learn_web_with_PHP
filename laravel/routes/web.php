@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::get('/', [HomeController::class, 'index']);
 
 Route::resource('laptops', LaptopController::class);
+Route::get('laptops/create', [LaptopController::class, 'create'])->name('laptops.create');
