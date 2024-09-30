@@ -4,24 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GuestController;
-<<<<<<< Updated upstream
-=======
-use App\Http\Controllers\LaptopController;
-use App\Http\Controllers\AuthenticatedSessionController;
->>>>>>> Stashed changes
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-<<<<<<< Updated upstream
-| Here is where you can register web routes for your application.
-| These routes are loaded by the RouteServiceProvider and all of them will
-=======
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
->>>>>>> Stashed changes
 | be assigned to the "web" middleware group. Make something great!
 |
 */
@@ -43,11 +33,6 @@ Route::middleware(['auth'])->group(function () {
 // Route dẫn đến trang bán hàng cho khách, không yêu cầu middleware
 Route::get('/guest', [GuestController::class, 'shop'])->name('guest.shop');
 
-<<<<<<< Updated upstream
-
-// Route resource dẫn đến các trang quản lý laptop
-Route::resource('laptops', LaptopController::class);
-=======
 // Route resource dẫn đến các trang quản lý laptop
 Route::resource('laptops', LaptopController::class);
 
@@ -73,4 +58,3 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     require __DIR__.'/auth.php';
 });
->>>>>>> Stashed changes
